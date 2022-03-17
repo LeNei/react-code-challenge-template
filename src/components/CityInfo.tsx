@@ -1,6 +1,10 @@
+interface CityInfoProps {    
+    state: string;    
+    year: string;    
+    population: number;
+}
 
-
-export default function CityInfo({state, year, population}){
+export default function CityInfo({state, year, population}: CityInfoProps){
 
     return(
         <div>
