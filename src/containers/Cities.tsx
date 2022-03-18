@@ -1,5 +1,8 @@
 import {useQuery } from "react-query";
+import CitiesHeader from "../components/CitiesHeader";
 import CityInfo from "../components/CityInfo";
+
+
 
 interface CitiesData {  
   'ID State': string;  
@@ -20,8 +23,10 @@ export default function Cities() {
   if (error) return <p>{"An error has occurred: " + error.message}</p>
 
   return (
-    <div>
-      {cities!.data.map((city: CitiesData) => (
+    
+    <div className=" bg-slate-300 container mx-auto flex flex-wrap justify-center">
+      <CitiesHeader />
+      {cities!.data.map((city: CitiesData) => (     
         <CityInfo 
         key={city['ID State']} 
         state={city['State']} 
